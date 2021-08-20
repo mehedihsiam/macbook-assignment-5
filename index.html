@@ -30,17 +30,17 @@
 
                         <div class="my-4">
                             <h5 class="mt-4 mx-1">Memory</h5>
-                            <button class="btn btn-primary mx-1">8GB unified memor</button>
-                            <button class="btn btn-primary mx-1">16GB unified memor</button>
+                            <button id="default-memory" class="btn btn-primary mx-1">8GB unified memor</button>
+                            <button id="extra-memory-btn" class="btn btn-primary mx-1">16GB unified memor</button>
                         </div>
 
                         <!-- storage option -->
 
                         <div class="my-4">
                             <h5 class="mt-4 mx-1">Storage</h5>
-                            <button class="btn btn-primary mx-1">256GB SSD storage</button>
-                            <button class="btn btn-primary mx-1">512GB SSD storage</button>
-                            <button class="btn btn-primary mx-1">1TB SSD storage</button>
+                            <button id="default-storage" class="btn btn-primary mx-1">256GB SSD storage</button>
+                            <button id="extra-storage-512" class="btn btn-primary mx-1">512GB SSD storage</button>
+                            <button id="extra-storage-1tb" class="btn btn-primary mx-1">1TB SSD storage</button>
                         </div>
 
 
@@ -48,8 +48,10 @@
 
                         <div class="my-4">
                             <h5 class="mt-4 mx-1">Choose your Delivery Option</h5>
-                            <button class="btn btn-primary mx-1 my-1">Friday, 25 Aug free prime delivery</button>
-                            <button class="btn btn-primary mx-1 my-1">Friday, 21 Aug Delivery Charge $20</button>
+                            <button id="free-delivery" class="btn btn-primary mx-1 my-1">Friday, 25 Aug free prime
+                                delivery</button>
+                            <button id="fast-delivery" class="btn btn-primary mx-1 my-1">Friday, 21 Aug Delivery Charge
+                                $20</button>
                         </div>
 
                         <!-- Costing table -->
@@ -63,19 +65,19 @@
                                     </tr>
                                     <tr>
                                         <th scope="row">Extra Memory Cost</th>
-                                        <td>$0</td>
+                                        <td>$ <span id="extra-memory-price">00</span> </td>
                                     </tr>
                                     <tr>
                                         <th scope="row">Extra Storage Cost</th>
-                                        <td>$0</td>
+                                        <td>$ <span id="extra-storage-price">00</span> </td>
                                     </tr>
                                     <tr>
                                         <th scope="row">Delivery Charge</th>
-                                        <td>$0</td>
+                                        <td>$ <span id="delivery-charge">00</span> </td>
                                     </tr>
                                     <tr>
                                         <th scope="row">Total Price</th>
-                                        <th>$1299</th>
+                                        <th>$ <span id="total-price">1299</span> </th>
                                     </tr>
                                 </table>
                             </div>
