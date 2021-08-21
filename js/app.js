@@ -2,7 +2,7 @@
 const totalCostCalled = document.getElementById('total-cost');
 const totalCostText = totalCostCalled.innerText;
 
-// total cos at footer
+// total cost at footer
 var totalCostFooter = document.getElementById('total-footer');
 var totalCostFooterText = totalCostFooter.innerText;
 var totalCostFooterNumber = parseInt(totalCostFooterText);
@@ -31,7 +31,7 @@ function totalCost() {
     totalCostCalled.innerText = totalCostAmount;
     totalCostFooter.innerText = totalCostAmount;
 
-    // const totalCostNumber = parseFloat(totalCostText);
+    // for promo code
     var discountAmount = (totalCostAmount / 100) * 20;
     var discountPrice = totalCostAmount - discountAmount;
     var discountPriceNumber = parseFloat(discountPrice);
@@ -39,6 +39,8 @@ function totalCost() {
 };
 
 
+
+// promo code function
 function promoCode() {
     const promoCodeInput = document.getElementById('promo-code-input');
     const promoCodeValue = promoCodeInput.value;
@@ -50,7 +52,9 @@ function promoCode() {
         promoCodeInput.value = '';
 
     };
-}
+};
+
+// apply promo code 
 const promoCodeButton = document.getElementById('promo-code-btn');
 promoCodeButton.addEventListener('click', function () {
     promoCode();
