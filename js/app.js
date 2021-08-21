@@ -67,14 +67,15 @@ var discountAmount = (totalCostFooterNumber / 100) * 20;
 var discountPrice = totalCostFooterNumber - discountAmount;
 var discountPriceNumber = parseInt(discountPrice);
 
-
-document.getElementById('promo-code-btn').addEventListener('click', function () {
+const promoCodeButton = document.getElementById('promo-code-btn');
+promoCodeButton.addEventListener('click', function () {
     const promoCodeInput = document.getElementById('promo-code-input');
     const promoCodeValue = promoCodeInput.value;
 
 
     if (promoCodeValue == 'stevekaku') {
         totalCostFooter.innerText = discountPriceNumber;
-        console.log(totalCostFooter);
+        promoCodeButton.disabled = true;
+        promoCodeInput.value = '';
     }
 })
