@@ -1,3 +1,7 @@
+var totalCostFooter = document.getElementById('total-footer');
+var totalCostFooterText = totalCostFooter.innerText;
+var totalCostFooterNumber = parseInt(totalCostFooterText);
+
 function updatePrice(input, price) {
     const calledPrice = document.getElementById(input);
     const priceText = calledPrice.innerText;
@@ -15,12 +19,13 @@ function totalCost() {
     const deliveryCharge = document.getElementById('delivery-charge').innerText;
 
     const totalCostText = document.getElementById('total-cost');
-    const totalCostFooterText = document.getElementById('total-footer');
     const totalCostAmount = parseInt(bestPrice) + parseInt(memoryPrice) + parseInt(storagePrice) + parseInt(deliveryCharge);
     totalCostText.innerText = totalCostAmount;
-    totalCostFooterText.innerText = totalCostAmount;
+    totalCostFooter.innerText = totalCostAmount;
 
-}
+};
+
+
 
 //  default memory
 document.getElementById('default-memory').addEventListener('click', function () {
@@ -56,3 +61,20 @@ document.getElementById('free-delivery').addEventListener('click', function () {
 document.getElementById('fast-delivery').addEventListener('click', function () {
     updatePrice('delivery-charge', 20);
 });
+
+
+var discountAmount = (totalCostFooterNumber / 100) * 20;
+var discountPrice = totalCostFooterNumber - discountAmount;
+var discountPriceNumber = parseInt(discountPrice);
+
+
+document.getElementById('promo-code-btn').addEventListener('click', function () {
+    const promoCodeInput = document.getElementById('promo-code-input');
+    const promoCodeValue = promoCodeInput.value;
+
+
+    if (promoCodeValue == 'stevekaku') {
+        totalCostFooter.innerText = discountPriceNumber;
+        console.log(totalCostFooter);
+    }
+})
