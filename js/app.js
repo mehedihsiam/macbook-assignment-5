@@ -1,7 +1,14 @@
+// declare total cost
+const totalCostCalled = document.getElementById('total-cost');
+const totalCostText = totalCostCalled.innerText;
+
+// total cos at footer
 var totalCostFooter = document.getElementById('total-footer');
 var totalCostFooterText = totalCostFooter.innerText;
 var totalCostFooterNumber = parseInt(totalCostFooterText);
 
+
+// price update function
 function updatePrice(input, price) {
     const calledPrice = document.getElementById(input);
     const priceText = calledPrice.innerText;
@@ -12,18 +19,45 @@ function updatePrice(input, price) {
     totalCost();
 };
 
+
+
+// total price update function
 function totalCost() {
     const bestPrice = document.getElementById('best-price').innerText;
     const memoryPrice = document.getElementById('extra-memory-price').innerText;
     const storagePrice = document.getElementById('extra-storage-price').innerText;
     const deliveryCharge = document.getElementById('delivery-charge').innerText;
-
-    const totalCostText = document.getElementById('total-cost');
     const totalCostAmount = parseInt(bestPrice) + parseInt(memoryPrice) + parseInt(storagePrice) + parseInt(deliveryCharge);
-    totalCostText.innerText = totalCostAmount;
+    totalCostCalled.innerText = totalCostAmount;
     totalCostFooter.innerText = totalCostAmount;
 
+    // const totalCostNumber = parseFloat(totalCostText);
+    var discountAmount = (totalCostAmount / 100) * 20;
+    var discountPrice = totalCostAmount - discountAmount;
+    var discountPriceNumber = parseFloat(discountPrice);
+    return discountPriceNumber;
 };
+
+
+function promoCode() {
+    const promoCodeInput = document.getElementById('promo-code-input');
+    const promoCodeValue = promoCodeInput.value;
+
+
+    if (promoCodeValue == 'stevekaku') {
+        totalCostFooter.innerText = totalCost();
+        promoCodeButton.disabled = true;
+        promoCodeInput.value = '';
+
+    };
+}
+const promoCodeButton = document.getElementById('promo-code-btn');
+promoCodeButton.addEventListener('click', function () {
+    promoCode();
+});
+
+
+
 
 
 
@@ -63,19 +97,4 @@ document.getElementById('fast-delivery').addEventListener('click', function () {
 });
 
 
-var discountAmount = (totalCostFooterNumber / 100) * 20;
-var discountPrice = totalCostFooterNumber - discountAmount;
-var discountPriceNumber = parseInt(discountPrice);
 
-const promoCodeButton = document.getElementById('promo-code-btn');
-promoCodeButton.addEventListener('click', function () {
-    const promoCodeInput = document.getElementById('promo-code-input');
-    const promoCodeValue = promoCodeInput.value;
-
-
-    if (promoCodeValue == 'stevekaku') {
-        totalCostFooter.innerText = discountPriceNumber;
-        promoCodeButton.disabled = true;
-        promoCodeInput.value = '';
-    }
-})
