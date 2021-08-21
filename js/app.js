@@ -15,8 +15,10 @@ function totalCost() {
     const deliveryCharge = document.getElementById('delivery-charge').innerText;
 
     const totalCostText = document.getElementById('total-cost');
+    const totalCostFooterText = document.getElementById('total-footer');
     const totalCostAmount = parseInt(bestPrice) + parseInt(memoryPrice) + parseInt(storagePrice) + parseInt(deliveryCharge);
     totalCostText.innerText = totalCostAmount;
+    totalCostFooterText.innerText = totalCostAmount;
 
 }
 
