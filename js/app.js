@@ -91,14 +91,6 @@ document.getElementById('extra-storage-1tb').addEventListener('click', function 
 });
 
 // free delivery
-document.getElementById('free-delivery').addEventListener('click', function () {
-    updatePrice('delivery-charge', 0);
-});
-
-// fast delivery
-document.getElementById('fast-delivery').addEventListener('click', function () {
-    updatePrice('delivery-charge', 20);
-});
-
+docum
 
 
